@@ -1,0 +1,1 @@
+python3 ./util/graphgen.py -s 6M --seed 8055 --topology sequential --verify -o graph-seq.bin
