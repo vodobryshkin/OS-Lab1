@@ -1,46 +1,46 @@
-echo '== Паспорт системы'
+echo "== Паспорт системы"
 
-echo '=== Ядро, архитектура'
-echo '```text'
+echo "=== Ядро, архитектура"
+echo "\`\`\`text"
 uname -a
-echo '```'
+echo "\`\`\`"
 
-echo '=== Модель CPU, число ядер/потоков, частоты, флаги (avx, sse и т.д.)'
-echo '```text'
+echo "=== Модель CPU, число ядер/потоков, частоты, флаги (avx, sse и т.д.)"
+echo "\`\`\`text"
 lscpu
-echo '```'
+echo "\`\`\`"
 
-echo '=== Топология: logical CPU ↔ physical core ↔ socket'
-echo '```text'
+echo "=== Топология: logical CPU ↔ physical core ↔ socket"
+echo "\`\`\`text"
 lscpu -e
-echo '```'
+echo "\`\`\`"
 
-echo '=== Размеры кэшей L1/L2/L3'
-echo '```text'
+echo "=== Размеры кэшей L1/L2/L3"
+echo "\`\`\`text"
 cat /proc/cpuinfo | grep -i cache
-echo '```'
+echo "\`\`\`"
 
-echo '=== Объём RAM, использование, размер page cache/buffers'
-echo '```text'
+echo "=== Объём RAM, использование, размер page cache/buffers"
+echo "\`\`\`text"
 free -h
-echo '```'
+echo "\`\`\`"
 
-echo '=== Модель диска/памяти, тип шины'
-echo '```text'
+echo "=== Модель диска/памяти, тип шины"
+echo "\`\`\`text"
 sudo lshw -class disk -class memory -short
-echo '```'
+echo "\`\`\`"
 
-echo '=== Тип накопителя (SSD/HDD/NVMe), состояние'
-echo '```text'
+echo "=== Тип накопителя (SSD/HDD/NVMe), состояние"
+echo "\`\`\`text"
 sudo smartctl -a /dev/sdX
-echo '```'
+echo "\`\`\`"
 
-echo '=== 0 = не вращающийся (SSD/NVMe), 1 = HDD'
-echo '```text'
+echo "=== 0 = не вращающийся (SSD/NVMe), 1 = HDD"
+echo "\`\`\`text"
 cat /sys/block/sdX/queue/rotational
-echo '```'
+echo "\`\`\`"
 
-echo '=== Число доступных логических CPU'
-echo '```text'
+echo "=== Число доступных логических CPU"
+echo "\`\`\`text"
 nproc
-echo '```'
+echo "\`\`\`"
