@@ -32,12 +32,12 @@ echo "\`\`\`"
 
 echo "== Тип накопителя (SSD/HDD/NVMe), состояние"
 echo "\`\`\`text"
-sudo smartctl -a /dev/sdX
+sudo smartctl -a /dev/nvme0n1
 echo "\`\`\`"
 
 echo "== 0 = не вращающийся (SSD/NVMe), 1 = HDD"
 echo "\`\`\`text"
-cat /sys/block/sdX/queue/rotational
+cat /sys/block/nvme0n1/queue/rotational
 echo "\`\`\`"
 
 echo "== Число доступных логических CPU"
